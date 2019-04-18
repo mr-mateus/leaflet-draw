@@ -1,0 +1,14 @@
+<thf-page-list  [t-actions]="pageActions" t-title="Configurador da Fábrica" [t-filter]="filterSettings">
+  {{mapProperties | json}}
+  <thf-table t-height="300" [t-items]="locations" [t-actions]="locationTableActions" [t-container]="border" [t-columns]="locationColumns"
+
+    t-hide-text-overflow=true t-sort=true t-striped=true [t-loading]=loadingLocations>
+  </thf-table>
+  <div style="height: 480px;" leaflet leafletDraw
+  (leafletMapReady)="onMapReady($event)"
+  (leafletDrawReady)="onDrawReady($event)"
+  (leafletDrawCreated)="onDrawCreated($event)"
+  [leafletOptions]="options"
+  [leafletDrawOptions]="drawOptions">
+  </div>
+</thf-page-list>

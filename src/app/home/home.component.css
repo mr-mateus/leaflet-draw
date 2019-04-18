@@ -1,0 +1,4 @@
+#locationsFounded li:hover{
+    background-color: darkcyan;
+    cursor: pointer;
+}
